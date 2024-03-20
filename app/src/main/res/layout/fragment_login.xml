@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/md_theme_tertiaryContainer"
+    >
+    <!-- Texto de bienvenida -->
+    <TextView
+        android:id="@+id/bienvenida"
+        android:layout_width="410dp"
+        android:layout_height="0sp"
+        android:layout_weight="0.2"
+        android:text="@string/bienvenida"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        />
+
+    <!-- Imagen -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:src="@drawable/logo"
+        android:layout_marginTop="16dp"
+        />
+
+    <!-- Cuadro de texto de usuario -->
+    <EditText
+        android:id="@+id/eTnombre"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:hint="@string/nombre"
+        android:textSize="18sp"
+        android:background="@color/white"/>
+
+    <!-- Botón para navegar por  la actividad -->
+
+    <Button
+        android:id="@+id/aceptar"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_weight="0.02"
+        android:text="@string/aceptar"
+        android:textSize="28sp"
+        android:layout_marginLeft="80dp"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        />
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
