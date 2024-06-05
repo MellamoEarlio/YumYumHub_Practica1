@@ -31,7 +31,9 @@ class MenuFragment : Fragment() {
         binding.creditos.setOnClickListener{
             findNavController().navigate(R.id.action_menuFragment_to_creditFragment)
         }
-
+        binding.lista.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_itemListFragment)
+        }
         //boton de play que lleva al framento CreditFragment.
         binding.salir.setOnClickListener{
             findNavController().navigate(R.id.action_menuFragment_to_loginFragment)

@@ -2,11 +2,16 @@
     <string name="app_name">YumYumHub</string>
     <string name="nombre">¿Cómo te llamas?</string>
     <string name="bienvenida">¡Bienvenido a YumYumHub!</string>
-    <string name="creditos">Ir a los creditos</string>
+    <string name="creditos">Creditos</string>
+    <string name="lista">Lista</string>
     <string name="aceptar">Aceptar</string>
+    <string name="volver">Volver</string>
+    <string name="ver_detalles">Detalles</string>
     <string name="favoritos">Favoritos</string>
     <string name="salir">Salir</string>
     <string name="info">%s, estás usando la versión 1 de...</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="explicacion">Desliza a la izquierda para navegar por nuestra app</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
