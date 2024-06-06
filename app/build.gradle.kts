@@ -53,6 +53,7 @@ dependencies {
     // kotlin
     implementation ("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")

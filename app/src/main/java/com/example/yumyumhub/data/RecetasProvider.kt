@@ -39,7 +39,7 @@ class RecetasProvider {
                 "Salmorejo",
                 "Luis Rodríguez",
                 9,
-                "https://www.spain.info/.content/imagenes/cabeceras-grandes/recetas/salmorejo-cordobes-s-374266120.jpg",
+                "https://tabernabeatillas.com/wp-content/uploads/2016/03/salmorejo.jpg",
                 "Sopa fría espesa de tomate, pan, ajo y aceite de oliva. Se sirve con huevo duro y jamón.",
                 listOf("Tomates", "Pan", "Ajo", "Aceite de oliva", "Vinagre", "Sal", "Huevo duro", "Jamón")
             ),
