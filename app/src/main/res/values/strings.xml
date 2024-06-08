@@ -8,11 +8,17 @@
     <string name="volver">Volver</string>
     <string name="detalles">Detalles</string>
     <string name="ver_detalles">Detalles</string>
+    <string name="viajar">Viajar</string>
+    <string name="Usuarios">Usuarios</string>
+    <string name="Contacta">Contacta</string>
     <string name="favoritos">Favoritos</string>
     <string name="salir">Salir</string>
     <string name="info">%s, estás usando la versión 1 de...</string>
     <string name="descripcion">Descripcion</string>
-    <string name="explicacion">Desliza a la izquierda para navegar por nuestra app</string>
+    <string name="explicacion1">Te damos la bienvenida a nuestra aplicacion, pero antes de nada, vamos ponerte un poco en contexto.</string>
+    <string name="explicacion2">Esta es una aplicacion es un proyecto realizado para la asignatura "Programación multimedia y dispositivos móviles", la aplicacion consiste en una app de recetas en la cual podremos guardar nuestras recetas favoritas y ver sus detalles</string>
+    <string name="explicacion3">Desliza a la izquierda para navegar por nuestra app</string>
+    <string name="explicacion4">Espero que disfrutes usando la app, cualquier duda o problema que encuentres estaremos dispuestos a solucionarlo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

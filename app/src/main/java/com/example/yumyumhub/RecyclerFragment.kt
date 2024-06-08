@@ -1,11 +1,12 @@
 package com.example.yumyumhub
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yumyumhub.adapter.RecetasAdapter
@@ -15,7 +16,6 @@ import com.example.yumyumhub.databinding.FragmentRecyclerBinding
 
 class RecyclerFragment : Fragment() {
 
-    // Variable para la vista binding para evitar fugas de memoria
     private var _binding: FragmentRecyclerBinding? = null
     private val binding get() = _binding!!
 
@@ -23,7 +23,6 @@ class RecyclerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflar el layout para este fragmento utilizando view binding
         _binding = FragmentRecyclerBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -34,30 +33,34 @@ class RecyclerFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        // Crear un LinearLayoutManager con el contexto proporcionado
         val manager = LinearLayoutManager(context)
-
-        // Crear una DividerItemDecoration con el contexto y la orientación del LinearLayoutManager
         val decoration = DividerItemDecoration(binding.recyclerRecetas.context, manager.orientation)
 
-        // Configurar el RecyclerView con el layout manager y el adaptador
         binding.recyclerRecetas.layoutManager = manager
-        binding.recyclerRecetas.adapter = RecetasAdapter(RecetasProvider.RecetasList) { receta ->
+        binding.recyclerRecetas.adapter = RecetasAdapter(RecetasProvider.RecetasList, { receta ->
             onItemSelected(receta)
-        }
+        }, { receta ->
+            onDetallesSelected(receta)
+        })
 
-        // Añadir la decoración de ítems al RecyclerView
         binding.recyclerRecetas.addItemDecoration(decoration)
     }
 
     private fun onItemSelected(receta: Recetas) {
-        // Mostrar un mensaje toast con el nombre de la receta seleccionada
         Toast.makeText(requireContext(), receta.nombre, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun onDetallesSelected(receta: Recetas) {
+        // Obtener el índice de la receta seleccionada en la lista RecetasList
+        val index = RecetasProvider.RecetasList.indexOf(receta)
+        // Crear la acción con el argumento adecuado (el índice de la receta)
+        val action = RecyclerFragmentDirections.actionRecyclerFragmentToDetailItemFragment(recetaIndex = index)
+        // Navegar al fragmento de detalles con la acción creada
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Limpiar el binding cuando la vista es destruida para evitar fugas de memoria
         _binding = null
     }
 }

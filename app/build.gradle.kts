@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-android")
+    id ("kotlin-parcelize")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -51,6 +54,7 @@ dependencies {
     val nav_version = "2.7.0"
 
     // kotlin
+    implementation ("com.google.android.material:material:1.8.0")
     implementation ("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation ("com.github.bumptech.glide:glide:4.16.0")

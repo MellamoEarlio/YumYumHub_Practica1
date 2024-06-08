@@ -32,7 +32,7 @@ class MenuFragment : Fragment() {
             findNavController().navigate(R.id.action_menuFragment_to_creditFragment)
         }
         binding.lista.setOnClickListener{
-            findNavController().navigate(R.id.action_menuFragment_to_itemListFragment)
+            findNavController().navigate(R.id.action_menuFragment_to_recyclerFragment)
         }
         //boton de play que lleva al framento CreditFragment.
         binding.salir.setOnClickListener{
