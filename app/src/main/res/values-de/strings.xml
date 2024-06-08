@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YumYumHub</string>
+    <string name="nombre">Wie ist dein Name?</string>
+    <string name="bienvenida">Willkommen bei YumYumHub!</string>
+    <string name="creditos">Credits</string>
+    <string name="lista">Liste</string>
+    <string name="aceptar">Akzeptieren</string>
+    <string name="volver">Zurück</string>
+    <string name="detalles">Details</string>
+    <string name="ver_detalles">Details</string>
+    <string name="viajar">Reisen</string>
+    <string name="Usuarios">Benutzer</string>
+    <string name="mas">Mehr</string>
+    <string name="Contacta">Kontaktieren</string>
+    <string name="favoritos">Favoriten</string>
+    <string name="salir">Verlassen</string>
+    <string name="info">%s, du verwendest Version 1 von...</string>
+    <string name="descripcion">Beschreibung</string>
+    <string name="explicacion1">Wir begrüßen Sie in unserer Anwendung, aber zuerst möchten wir Ihnen etwas Kontext geben.</string>
+    <string name="explicacion2">Diese Anwendung ist ein Projekt für das Fach "Multimedia-Programmierung und mobile Geräte". Die App dreht sich um Rezepte, in denen Sie Ihre Lieblingsrezepte speichern und deren Details anzeigen können.</string>
+    <string name="explicacion3">Wischen Sie nach links, um durch unsere App zu navigieren.</string>
+    <string name="explicacion4">Wir hoffen, dass Ihnen die Nutzung der App gefällt. Bei Fragen oder Problemen, die Sie haben, helfen wir Ihnen gerne weiter.</string>
+    <!-- TODO: Entfernen oder ändern Sie diesen Platzhaltertext -->
+    <string name="hello_blank_fragment">Hallo leeres Fragment</string>
+</resources>

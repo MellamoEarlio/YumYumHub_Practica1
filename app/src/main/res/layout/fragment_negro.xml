@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/viajar"
+            android:backgroundTint="@color/md_theme_primary"
             android:id="@+id/btnMenu"
             android:layout_margin="16dp" />
     </LinearLayout>
