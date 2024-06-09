@@ -40,7 +40,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-
     }
 
     viewBinding {
@@ -59,7 +58,14 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("androidx.appcompat:appcompat:1.3.1")
-
+    // ViewModel
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
+    // LiveData
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.8.1")
+    // Fragment
+    implementation ("androidx.fragment:fragment-ktx:1.7.1")
+    // Activity
+    implementation ("androidx.activity:activity-ktx:1.9.0")
 
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
