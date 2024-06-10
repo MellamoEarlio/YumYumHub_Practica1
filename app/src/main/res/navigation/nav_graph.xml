@@ -63,8 +63,9 @@
             android:id="@+id/action_itemListFragment_to_favItemListFragment"
             app:destination="@id/favItemListFragment" />
         <action
-            android:id="@+id/action_itemListFragment_to_detailItemFragment3"
+            android:id="@+id/action_itemListFragment_to_detailItemFragment"
             app:destination="@id/detailItemFragment" />
+
 
     </fragment>
 
@@ -72,7 +73,11 @@
         android:id="@+id/detailItemFragment"
         android:name="com.example.yumyumhub.DetailItemFragment"
         android:label="fragment_detail_item"
-        tools:layout="@layout/fragment_detail_item" />
+        tools:layout="@layout/fragment_detail_item" >
+        <argument
+            android:name="pos"
+            app:argType="integer"/>
+    </fragment>
 
     <fragment
         android:id="@+id/favItemListFragment"

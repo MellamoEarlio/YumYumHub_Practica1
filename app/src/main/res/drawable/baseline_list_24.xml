@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Fondo transparente -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,0h24v24h-24z"/>
+
+    <!-- Línea horizontal superior -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4,7h16v2h-16z"/>
+
+
+    <!-- Línea horizontal central -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4,13h16v2h-16z"/>
+
+
+
+    <!-- Línea horizontal inferior -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M4,19h16v2h-16z"/>
+
+
+
+</vector>

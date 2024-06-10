@@ -7,6 +7,6 @@
         android:top="260dp"
         android:bottom="260dp"
         >
-        <bitmap android:src="@drawable/logo"/>
+        <bitmap android:src="@drawable/chef_luigi"/>
     </item>
 </layer-list>

@@ -1,6 +1,5 @@
 package com.example.yumyumhub
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,23 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.example.yumyumhub.data.Recetas
-
-private const val ARG_RECETA = "receta"
+import com.example.yumyumhub.data.Datasource
 
 class DetailItemFragment : Fragment() {
+    private val args: DetailItemFragmentArgs by navArgs()
 
-    private lateinit var receta: Recetas
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            receta = it.getParcelable(ARG_RECETA)!!
-        }
-    }
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,9 +27,18 @@ class DetailItemFragment : Fragment() {
         val recipeIngredients = view.findViewById<TextView>(R.id.recipeIngredients)
         val recipeImage = view.findViewById<ImageView>(R.id.recipeImage)
 
+        // Obtiene la posición de la receta desde los argumentos
+        val pos = args.pos
+
+        // Obtiene la lista de recetas desde el Datasource
+        val recetaList = Datasource.getRecetaList()
+
+        // Obtiene la receta correspondiente a la posición dada
+        val receta = recetaList[pos]
+
         recipeTitle.text = receta.nombre
         recipeAuthor.text = receta.autor
-        recipeTiempo.text = receta.tiempo.toString() // Asegúrate de convertirlo a String
+        recipeTiempo.text = receta.tiempo.toString()
         recipeDescription.text = receta.descripcion
         recipeIngredients.text = receta.ingredientes.joinToString(", ")
 

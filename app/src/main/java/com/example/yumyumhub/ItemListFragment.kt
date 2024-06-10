@@ -53,7 +53,7 @@ class ItemListFragment : Fragment() {
     }
 
     private fun onDetallesSelected(pos: Int) {
-        findNavController().navigate(R.id.action_itemListFragment_to_detailItemFragment3)
+        findNavController().navigate(ItemListFragmentDirections.actionItemListFragmentToDetailItemFragment(pos))
     }
 
     override fun onDestroyView() {
