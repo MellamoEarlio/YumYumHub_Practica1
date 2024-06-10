@@ -1,55 +1,63 @@
 package com.example.yumyumhub
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.yumyumhub.adapter.RecetaAdapter
+import com.example.yumyumhub.data.RecetasProvider
+import com.example.yumyumhub.databinding.FragmentItemListBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ItemListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ItemListFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private var _binding: FragmentItemListBinding? = null
+    private val binding get() = _binding!!
+
+    private var listarecetas = RecetasProvider.RecetasList
+    private lateinit var recetaadapter: RecetaAdapter
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentItemListBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_list, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecyclerView()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ItemListFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic fun newInstance(param1: String, param2: String) =
-                ItemListFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+    private fun initRecyclerView() {
+        val manager = LinearLayoutManager(context)
+        val decoration = DividerItemDecoration(binding.recyclerRecetas.context, manager.orientation)
+
+        binding.recyclerRecetas.layoutManager = manager
+        binding.recyclerRecetas.adapter = RecetaAdapter(
+            listarecetas,
+            { pos -> onItemSelected(pos) },
+            { pos -> onDetallesSelected(pos) }
+        )
+
+        binding.recyclerRecetas.addItemDecoration(decoration)
+    }
+
+    private fun onItemSelected(pos: Int) {
+        Toast.makeText(requireContext(), listarecetas[pos].nombre, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun onDetallesSelected(pos: Int) {
+        findNavController().navigate(R.id.action_itemListFragment_to_detailItemFragment3)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

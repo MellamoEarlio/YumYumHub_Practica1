@@ -39,11 +39,10 @@
             android:id="@+id/action_menuFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_menuFragment_to_itemListFragment"
-            app:destination="@id/recyclerFragment" />
-        <action
-            android:id="@+id/action_menuFragment_to_recyclerFragment"
-            app:destination="@id/recyclerFragment" />
+            android:id="@+id/action_menuFragment_to_itemListFragment2"
+            app:destination="@id/itemListFragment" />
+
+
     </fragment>
 
     <fragment
@@ -63,6 +62,10 @@
         <action
             android:id="@+id/action_itemListFragment_to_favItemListFragment"
             app:destination="@id/favItemListFragment" />
+        <action
+            android:id="@+id/action_itemListFragment_to_detailItemFragment3"
+            app:destination="@id/detailItemFragment" />
+
     </fragment>
 
     <fragment
@@ -87,17 +90,4 @@
         android:label="fragment_detail_fav_item"
         tools:layout="@layout/fragment_detail_fav_item" />
 
-    <fragment
-        android:id="@+id/recyclerFragment"
-        android:name="com.example.yumyumhub.RecyclerFragment"
-        android:label="fragment_recycler"
-        tools:layout="@layout/fragment_recycler" >
-        <action
-            android:id="@+id/action_recyclerFragment_to_detailItemFragment"
-            app:destination="@id/detailItemFragment">
-            <argument
-                android:name="recetaIndex"
-                app:argType="integer" />
-        </action>
-    </fragment>
 </navigation>

@@ -50,14 +50,4 @@ class DetailItemFragment : Fragment() {
 
         return view
     }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(receta: Recetas) =
-            DetailItemFragment().apply {
-                arguments = Bundle().apply {
-                    putParcelable(ARG_RECETA, receta)
-                }
-            }
-    }
 }

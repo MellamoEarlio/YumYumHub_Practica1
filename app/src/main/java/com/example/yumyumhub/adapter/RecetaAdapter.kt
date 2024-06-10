@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.yumyumhub.R
 import com.example.yumyumhub.data.Recetas
 
-class RecetasAdapter(
+class RecetaAdapter(
     private val recetasList: List<Recetas>,
-    private val onClickListener: (Recetas) -> Unit,
-    private val onDetallesClickListener: (Recetas) -> Unit
+    private val onClickReceta: (Int) -> Unit,
+    private val onDetallesClick: (Int) -> Unit
 ) : RecyclerView.Adapter<RecetasViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecetasViewHolder {
@@ -21,6 +21,6 @@ class RecetasAdapter(
 
     override fun onBindViewHolder(holder: RecetasViewHolder, position: Int) {
         val item = recetasList[position]
-        holder.render(item, onClickListener, onDetallesClickListener)
+        holder.render(item, onClickReceta, onDetallesClick)
     }
 }
